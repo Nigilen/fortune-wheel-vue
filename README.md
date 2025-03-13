@@ -4,7 +4,7 @@
 ## СТЕК
 - HTML
 - SCSS
-- React
+- Vue
 - TypeScript
 - Vite
 
