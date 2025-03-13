@@ -50,19 +50,23 @@ const handleClose = () => {
   <footer>
     <PrimaryButton text="Крути" :onClick="handleClick" :isDisabled="isDisabled" />
   </footer>
-  <Modal v-if=showModal :onClose="handleClose" :text="selectedItem?.value || null" />
+  <Transition>
+    <Teleport to="main">
+      <Modal v-if=showModal :onClose="handleClose" :text="selectedItem?.value || null" />
+    </Teleport>
+  </Transition>
 
-
-
-
-  <!-- <header>
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-    
-  </header> -->
-  <!-- <RouterView /> -->
 </template>
+
+
+<style>
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.5s ease;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+  }
+</style>

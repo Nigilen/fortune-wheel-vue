@@ -88,6 +88,7 @@ watch(() => props.selectedItem, (newSelectedItem) => {
       position: absolute;
       inset: 0;
       margin: auto;
+      z-index: 1;
     }
   
     &__item {
